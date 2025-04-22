@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:prettier": "prettier --write --ignore-path .gitignore './**/*.{js,mjs,jsx,ts,tsx,json}'",
+    "format:eslint": "pnpm run lint --fix",
+    "format:prettier": "pnpm run lint:prettier -w",
+    "format": "pnpm run format:prettier && pnpm run format:eslint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
@@ -15,6 +19,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.503.0",
     "next": "15.3.1",
+    "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.2.0",
